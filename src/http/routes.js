@@ -25,6 +25,35 @@ const routes = (server) => {
     next()
   })
 
+  server.post('users', async (req, res, next) => {
+    const { email, password } = req.params
+    try {
+      res.send(await db.users().save(email, password))
+    } catch (error) {
+      res.send(error)
+    }
+    next()
+  })
+
+  server.get('users', async (req, res, next) => {
+    try {
+      res.send(await db.users().all())
+    } catch (error) {
+      res.send(error)
+    }
+    next()
+  })  
+
+  server.del('users', async (req, res, next) => {
+    const { id } = req.params
+    try {
+      res.send(await db.users().del(id))
+    } catch (error) {
+      res.send(error)
+    } 
+    next()
+  })  
+  
   server.put('categoria', async (req, res, next) => {
     const { id, name } = req.params
     try {
@@ -47,3 +76,4 @@ const routes = (server) => {
 }
 
 module.exports = routes
+

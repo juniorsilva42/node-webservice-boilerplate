@@ -1,4 +1,3 @@
-
 const mysqlServer = require('mysql')
 
 const connection = mysqlServer.createConnection({
@@ -14,7 +13,9 @@ const errorHandler = (error, msg, rejectFunction) => {
 }
 
 const categoryModule = require('./categories')({ connection, errorHandler })
+const userModule = require('./users')({ connection, errorHandler })
 
 module.exports = {
-  categories: () => categoryModule
+  categories: () => categoryModule,
+  users: () => userModule
 }

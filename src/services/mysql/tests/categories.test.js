@@ -1,4 +1,4 @@
-// create table categories (id int NOT NULL AUTO_INCREMENT, name varchar(255) NOT NULL, PRIMARY KEY(id));
+// CREATE TABLE categories (id int NOT NULL AUTO_INCREMENT, name varchar(255) NOT NULL, PRIMARY KEY(id));
 
 import test from 'ava'
 

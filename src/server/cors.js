@@ -8,3 +8,4 @@ const cors = corsMiddleware({
 })
 
 module.exports = cors
+

@@ -1,12 +1,20 @@
-const restify = require('restify')
+import restify from 'restify'
+import path from 'path'
+
+import cors from './cors'
+import registerRoutesByPath from '../libs/@threesoft/way'
+
 const server = restify.createServer()
-const routes = require('../http/routes')
-const cors = require('./cors');
 
 server.pre(cors.preflight)
 server.use(cors.actual)
 server.use(restify.plugins.bodyParser())
 
-routes(server)
+/*
+ *
+ * Registra todas as rotas
+ * 
+*/
+registerRoutesByPath(server, path.join(__dirname, '../http/routes'))
 
-module.exports = server
+export default server

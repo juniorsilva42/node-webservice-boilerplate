@@ -13,6 +13,7 @@ const categories = deps => {
         })
       })
     },
+
     save: (name) => {
       return new Promise((resolve, reject) => {
         const { connection, errorHandler } = deps
@@ -25,6 +26,7 @@ const categories = deps => {
         })
       })
     },
+
     update: (id, name) => {
       return new Promise((resolve, reject) => {
         const { connection, errorHandler } = deps
@@ -37,6 +39,7 @@ const categories = deps => {
         })
       })
     },
+    
     del: (id) => {
       return new Promise((resolve, reject) => {
         const { connection, errorHandler } = deps
