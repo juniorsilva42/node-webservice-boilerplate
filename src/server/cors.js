@@ -1,11 +1,11 @@
-const corsMiddleware = require('restify-cors-middleware')
+const corsMiddleware = require('restify-cors-middleware');
 
 const cors = corsMiddleware({
-  preflightMaxAge: 5, 
+  preflightMaxAge: 5,
   origins: ['*'],
   allowHeaders: ['*'],
-  exposeHeaders: ['*']
-})
+  exposeHeaders: ['*'],
+});
 
-module.exports = cors
+module.exports = cors;
 

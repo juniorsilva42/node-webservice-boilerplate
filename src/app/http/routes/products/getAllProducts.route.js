@@ -4,7 +4,5 @@ module.exports = {
   name: 'products',
   useWrap: true,
   version: 'v1.0.0',
-  handler: (req, res) => {
-    return { ok: true }
-  }
-}
+  handler: () => ({ ok: true }),
+};

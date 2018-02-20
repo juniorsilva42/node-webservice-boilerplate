@@ -1,4 +1,4 @@
-import Boom from 'boom'
+import Boom from 'boom';
 
 /**
  * call a middleware
@@ -6,13 +6,13 @@ import Boom from 'boom'
  * @param  {Function} fn
  * @return {Promise}
  */
-const tryCatch = fn => {
+const tryCatch = (fn) => {
   try {
-    return Promise.resolve(fn())
+    return Promise.resolve(fn());
   } catch (e) {
-    return Promise.reject(e)
+    return Promise.reject(e);
   }
-}
+};
 
 /**
  * @method sendError
@@ -20,24 +20,22 @@ const tryCatch = fn => {
  * @param  {Error}            e
  */
 const sendError = (res, e) => {
-  const output = Boom.boomify(e).output
-  res.send(output.statusCode, output)
-}
+  const output = Boom.boomify(e).output;
+  res.send(output.statusCode, output);
+};
 
 /**
  * @method wrapMiddleware
  * @param  {Function}       middleware route middleware
  * @return {Function}
  */
-const wrapMiddleware = middleware => {
-  return (req, res) => {
-    const handler = () => middleware(req, res)
-    tryCatch(handler)
-      .then(result => {
-        res.json(result)
-      })
-      .catch(sendError)
-  }
-}
+const wrapMiddleware = middleware => (req, res) => {
+  const handler = () => middleware(req, res);
+  tryCatch(handler)
+    .then((result) => {
+      res.json(result);
+    })
+    .catch(sendError);
+};
 
-module.exports = wrapMiddleware
+module.exports = wrapMiddleware;

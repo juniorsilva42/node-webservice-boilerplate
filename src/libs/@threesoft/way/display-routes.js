@@ -1,40 +1,42 @@
-import { table } from 'table'
+import { table } from 'table';
 
 const head = [
   'method',
   'path',
   'name',
-  'version'
-]
+  'version',
+];
 
 /**
  * @method routeToRow
  * @param  {Object}   route
  * @return {Array<String>}
  */
-const routeToRow = route => {
-  const { method, path, name, version } = route
-  return ([ method, path, name, version ])
-}
+const routeToRow = (route) => {
+  const {
+    method, path, name, version,
+  } = route;
+  return ([method, path, name, version]);
+};
 
 /**
  * @method parseRoutesToRows
  * @param  {Array<Object>}    routes
  * @return {Array<String>}
  */
-const parseRoutesToRows = routes => {
-  const rows = routes.map(routeToRow)
-  return [ head, ...rows ]
-}
+const parseRoutesToRows = (routes) => {
+  const rows = routes.map(routeToRow);
+  return [head, ...rows];
+};
 
 /**
  * @method displayRoutes
  * @param  {Array<Object>}     routes
  */
-const displayRoutes = routes => {
-  const rows = parseRoutesToRows(routes)
+const displayRoutes = (routes) => {
+  const rows = parseRoutesToRows(routes);
 
-  console.log(table(rows))
-}
+  console.log(table(rows));
+};
 
-export default displayRoutes 
+export default displayRoutes;

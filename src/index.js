@@ -1,5 +1,5 @@
-import app from './server/app'
+import app from './server/app';
 
 app.listen('7000', () => {
-    console.log('App running!')
-})
+  console.log('App running!');
+});

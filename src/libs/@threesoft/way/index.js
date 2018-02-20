@@ -1,6 +1,6 @@
-import loadRoutesByPath from './load-routes-by-path'
-import displayRoutes from './display-routes'
-import registerRoute from './register-route'
+import loadRoutesByPath from './load-routes-by-path';
+import displayRoutes from './display-routes';
+import registerRoute from './register-route';
 
 /**
  * @method registerRoutesByPath
@@ -8,9 +8,9 @@ import registerRoute from './register-route'
  * @param  {String}             dirName
  */
 const registerRoutesByPath = (server, dirName) => {
-  const routes = loadRoutesByPath(dirName)
-  routes.forEach(route => registerRoute(server, route))
-  displayRoutes(routes)
-}
+  const routes = loadRoutesByPath(dirName);
+  routes.forEach(route => registerRoute(server, route));
+  displayRoutes(routes);
+};
 
-module.exports = registerRoutesByPath
+module.exports = registerRoutesByPath;
