@@ -1,6 +1,4 @@
 import express from 'express';
-import path from 'path';
-import registerRoutesByPath from '../libs/@threesoft/way';
 import bodyParser from 'body-parser';
 
 const app = express();
