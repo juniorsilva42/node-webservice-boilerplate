@@ -4,12 +4,12 @@ import registerRoute from './register-route';
 
 /**
  * @method registerRoutesByPath
- * @param  {RestifyServer}      server  restify instance
+ * @param  {ExpressServer}      app  express instance
  * @param  {String}             dirName
  */
-const registerRoutesByPath = (server, dirName) => {
+const registerRoutesByPath = (app, dirName) => {
   const routes = loadRoutesByPath(dirName);
-  routes.forEach(route => registerRoute(server, route));
+  routes.forEach(route => registerRoute(app, route)); // 
   displayRoutes(routes);
 };
 

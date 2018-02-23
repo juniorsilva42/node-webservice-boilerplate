@@ -39,4 +39,4 @@ const displayRoutes = (routes) => {
   console.log(table(rows));
 };
 
-export default displayRoutes;
+module.exports = displayRoutes;

@@ -33,15 +33,15 @@ const getHandlers = (route) => {
 
 /**
  * @method registerRoute
- * @param  {RestifyServer}  server restify instance
+ * @param  {ExpressServer}  app express instance
  * @param  {Object}         route  route object
  */
-const registerRoute = (server, route) => {
+const registerRoute = (app, route) => {
   const { method } = route;
-  const opts = pick(route, ['path', 'name', 'version']);
+  const opts = pick(route, ['path']);
   const handlers = getHandlers(route);
 
-  // server[method](opts, handlers)
+  app.route(opts)[method]( handlers );
 };
 
 module.exports = registerRoute;
