@@ -1,5 +1,6 @@
-import app from './server/app';
 import consign from 'consign';
+import app from './server/app';
+
 
 consign({ cwd: 'src/app' })
   .include('models')

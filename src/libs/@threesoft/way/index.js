@@ -11,8 +11,9 @@ const registerRoutesByPath = (app, dirName) => {
   const routes = loadRoutesByPath(dirName);
   routes.forEach(route => registerRoute(app, route));
 
-  if (process.env.environment !== 'production')
+  if (process.env.environment !== 'production') {
     displayRoutes(routes);
+  }
 };
 
 export default registerRoutesByPath;

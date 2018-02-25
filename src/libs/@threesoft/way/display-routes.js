@@ -13,9 +13,13 @@ const head = [
  * @return {Array<String>}
  */
 const routeToRow = (route) => {
+  const extractedRoute =
+    Object.prototype.hasOwnProperty.call(route, 'default') ? route.default : route;
+
   const {
     method, path, name, version,
-  } = route;
+  } = extractedRoute;
+
   return ([method, path, name, version]);
 };
 
@@ -36,7 +40,7 @@ const parseRoutesToRows = (routes) => {
 const displayRoutes = (routes) => {
   const rows = parseRoutesToRows(routes);
 
-  // console.log(table(rows));
+  console.log(table(rows));
 };
 
 export default displayRoutes;

@@ -13,9 +13,9 @@ const isRouteFile = fileName => /((routes)|(route))\.js$/.test(fileName);
  * The callback still contains the files and recurse
  */
 const getRoutesFilesFromDirname = dirName => filterFiles.sync(dirName, (fp, dir) => {
-
-  if (isRouteFile(fp))
+  if (isRouteFile(fp)) {
     return true;
+  }
 
   return isDir.sync(path.join(dir, fp));
 }, true);

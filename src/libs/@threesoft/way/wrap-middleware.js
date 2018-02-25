@@ -6,7 +6,7 @@ import Boom from 'boom';
  * @param  {Error}            e
  */
 const sendError = (res, e) => {
-  const output = Boom.boomify(e).output;
+  const { output } = Boom.boomify(e);
   res.send(output.statusCode, output);
 };
 
@@ -16,13 +16,11 @@ const sendError = (res, e) => {
  * @return {Function}
  */
 const wrapMiddleware = middleware => async (req, res, next) => {
-
   try {
     await middleware(req, res, next);
-  } catch (e){
+  } catch (e) {
     sendError();
   }
-
 };
 
 export default wrapMiddleware;
