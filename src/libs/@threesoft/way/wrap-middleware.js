@@ -1,20 +1,6 @@
 import Boom from 'boom';
 
 /**
- * call a middleware
- * @method tryCatch
- * @param  {Function} fn
- * @return {Promise}
- */
-const tryCatch = (fn) => {
-  try {
-    return Promise.resolve(fn());
-  } catch (e) {
-    return Promise.reject(e);
-  }
-};
-
-/**
  * @method sendError
  * @param  {ResponseRestify}  res response instance
  * @param  {Error}            e
@@ -29,13 +15,14 @@ const sendError = (res, e) => {
  * @param  {Function}       middleware route middleware
  * @return {Function}
  */
-const wrapMiddleware = middleware => (req, res) => {
-  const handler = () => middleware(req, res);
-  tryCatch(handler)
-    .then((result) => {
-      res.json(result);
-    })
-    .catch(sendError);
+const wrapMiddleware = middleware => async (req, res, next) => {
+
+  try {
+    await middleware(req, res, next);
+  } catch (e){
+    sendError();
+  }
+
 };
 
-module.exports = wrapMiddleware;
+export default wrapMiddleware;

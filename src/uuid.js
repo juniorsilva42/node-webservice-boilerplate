@@ -1,5 +1,4 @@
 const createUUID = () => {
-
   let date = new Date().getTime();
   const uuid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx';
 

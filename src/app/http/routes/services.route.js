@@ -1,11 +1,11 @@
 export default {
   method: 'get',
-  path: '/books',
-  name: 'books',
+  path: '/services',
+  name: 'services',
   useWrap: true,
-  version: "v1.0.0",
+  version: 't1.0.0',
   handler: (req, res, next) => {
-    res.send('books!');
+    res.send('Services route!');
     next();
   },
 };

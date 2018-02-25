@@ -4,13 +4,15 @@ import registerRoute from './register-route';
 
 /**
  * @method registerRoutesByPath
- * @param  {ExpressServer}      app  express instance
+ * @param  {ExpressServer}      app express instance
  * @param  {String}             dirName
  */
 const registerRoutesByPath = (app, dirName) => {
   const routes = loadRoutesByPath(dirName);
-  routes.forEach(route => registerRoute(app, route)); // 
-  displayRoutes(routes);
+  routes.forEach(route => registerRoute(app, route));
+
+  if (process.env.environment !== 'production')
+    displayRoutes(routes);
 };
 
-module.exports = registerRoutesByPath;
+export default registerRoutesByPath;

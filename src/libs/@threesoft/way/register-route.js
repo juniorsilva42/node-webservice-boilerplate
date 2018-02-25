@@ -24,11 +24,10 @@ const getHandlers = (route) => {
   const { useWrap } = route;
   let handlers = toArray(route.handler);
 
-  if (useWrap) {
+  if (useWrap)
     handlers = applyWrap(handlers);
-  }
 
-  return handlers;
+   return handlers;
 };
 
 /**
@@ -37,11 +36,12 @@ const getHandlers = (route) => {
  * @param  {Object}         route  route object
  */
 const registerRoute = (app, route) => {
-  const { method } = route;
-  const opts = pick(route, ['path']);
-  const handlers = getHandlers(route);
+  const extractedRoute = route.hasOwnProperty('default') ? route.default : route;
+  const { path, method } = extractedRoute;
+  const opts = pick(extractedRoute, ['name', 'version']);
+  const handlers = getHandlers(extractedRoute);
 
-  app.route(opts)[method]( handlers );
+   app.route(path, opts)[method](handlers);
 };
 
-module.exports = registerRoute;
+export default registerRoute;

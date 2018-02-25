@@ -9,9 +9,13 @@ const isRouteFile = fileName => /((routes)|(route))\.js$/.test(fileName);
  * @method getRoutesFilesFromDirname
  * @param  {String}            dirName
  * @return {Array<String>}
+ *
+ * The callback still contains the files and recurse
  */
-const getRoutesFilesFromDirname = dirName => filterFiles.sync(dirName, (fp, dir, files, recurse) => {
-  if (isRouteFile(fp)) { return true; }
+const getRoutesFilesFromDirname = dirName => filterFiles.sync(dirName, (fp, dir) => {
+
+  if (isRouteFile(fp))
+    return true;
 
   return isDir.sync(path.join(dir, fp));
 }, true);
@@ -26,4 +30,4 @@ const loadRoutesByPath = (dirName) => {
   return flatten(routes);
 };
 
-module.exports = loadRoutesByPath;
+export default loadRoutesByPath;
