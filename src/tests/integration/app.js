@@ -4,7 +4,7 @@ describe('Routes Books', () => {
     name: 'Default Book',
   };
 
-  describe('Route GET /books', () => {
+  describe('Route /books', () => {
     it('should return a list of books', (done) => {
       request
         .get('/books')
@@ -16,4 +16,3 @@ describe('Routes Books', () => {
     });
   });
 });
-
