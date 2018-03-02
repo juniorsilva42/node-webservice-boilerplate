@@ -1,10 +1,7 @@
 class Books {
-  constructor(message) {
-    this.message = message;
-  }
-
-  hello() {
-    return this.message;
+ 
+  hello(message) {
+    return message;
   }
 }
 

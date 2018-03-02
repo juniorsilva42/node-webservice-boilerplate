@@ -34,7 +34,7 @@ const getHandlers = (route) => {
 /**
  * @method registerRoute
  * @param  {ExpressServer}  app express instance
- * @param  {Object}         route  route object
+ * @param  {Object}         route route object
  */
 const registerRoute = (app, route) => {
   const extractedRoute = Object.hasOwnProperty.call(route, 'default') ? route.default : route;

@@ -6,7 +6,8 @@
   "scripts": {
     "build": "babel ./src --out-dir dist/ --ignore ./node_modules,./.babelrc,./package.json,./npm-debug.log --copy-files",
     "start": "babel-node src/index",
-    "test:integration": "mocha --opts src/tests/integration/mocha.opts src/tests/integration/*.js",
+    "start:prod": "cross-env NODE_ENV=prod babel-node src/index",
+    "test:integration": "cross-env NODE_ENV=test mocha --opts __tests__/integration/mocha.opts __tests__/integration/**/*.test.js",
     "lint": "eslint 'src/**/*.js'",
     "lint:fix": "eslint 'src/**/*.js' --fix"
   },
