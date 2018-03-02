@@ -6,7 +6,8 @@
   "scripts": {
     "build": "babel ./src --out-dir dist/ --ignore ./node_modules,./.babelrc,./package.json,./npm-debug.log --copy-files",
     "start": "babel-node src/index",
-    "test:integration": "mocha --opts src/tests/integration/mocha.opts src/tests/integration/*.js",
+    "start:prod": "cross-env NODE_ENV=prod babel-node src/index",
+    "test:integration": "cross-env NODE_ENV=test mocha --opts __tests__/integration/mocha.opts __tests__/integration/**/*.test.js",
     "lint": "eslint 'src/**/*.js'",
     "lint:fix": "eslint 'src/**/*.js' --fix"
   },
@@ -37,7 +38,6 @@
     "boom": "^5.2.0",
     "chai": "^4.1.2",
     "consign": "^0.1.6",
-    "cuid": "^2.1.0",
     "dotenv": "^4.0.0",
     "express": "^4.16.2",
     "filter-files": "^0.4.0",

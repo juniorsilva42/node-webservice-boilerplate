@@ -9,9 +9,7 @@ app.set('port', 5000);
 app.use(bodyParser.json());
 
 /*
- *
  * Registra todas as rotas
- *
 */
 registerRoutesByPath(app, path.join(__dirname, '../app/http/routes/'));
 
