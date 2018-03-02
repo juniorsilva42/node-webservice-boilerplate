@@ -2,11 +2,14 @@ import consign from 'consign';
 import app from './server/app';
 
 consign({ cwd: 'src/app' })
+  .include('configuration')
   .include('models')
-  .then('controllers')
+  .include('controllers')
+  .include('services')
   .then('middlewares')
+  .then('helpers')
   .into(app);
 
-app.listen(5000, () => {
+app.listen(app.get('port'), () => {
   console.log('App running!');
 });

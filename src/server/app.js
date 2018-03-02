@@ -5,7 +5,9 @@ import registerRoutesByPath from '../libs/@threesoft/way/';
 
 const app = express();
 
-app.set('port', 5000);
+app.set('port', (process.env.PORT || 3000));
+
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 /*
