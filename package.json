@@ -32,20 +32,23 @@
     "sha1": "^1.1.1"
   },
   "dependencies": {
-    "table": "^4.0.1",
-    "dotenv": "^4.0.0",
-    "chai": "^4.1.2",
-    "supertest": "^3.0.0",
+    "bcrypt": "^1.0.3",
     "body-parser": "^1.18.2",
     "boom": "^5.2.0",
+    "chai": "^4.1.2",
     "consign": "^0.1.6",
     "cuid": "^2.1.0",
+    "dotenv": "^4.0.0",
     "express": "^4.16.2",
     "filter-files": "^0.4.0",
     "is-directory": "^0.3.1",
+    "jsonwebtoken": "^8.2.0",
     "lodash": "^4.17.4",
+    "mongoose": "^5.0.7",
     "nanoid": "^1.0.2",
     "sequelize": "^4.33.4",
+    "supertest": "^3.0.0",
+    "table": "^4.0.1",
     "uuid": "^3.2.1"
   }
 }
