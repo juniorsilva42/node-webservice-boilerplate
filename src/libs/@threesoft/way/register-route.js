@@ -37,6 +37,7 @@ const getHandlers = (route) => {
  * @param  {Object}         route route object
  */
 const registerRoute = (app, route) => {
+  
   const extractedRoute = Object.hasOwnProperty.call(route, 'default') ? route.default : route;
   const { path, method } = extractedRoute;
   const opts = pick(extractedRoute, ['name', 'version']);

@@ -1,8 +1,7 @@
-class Books {
- 
-  hello(message) {
-    return message;
+const Books = {
+  show () {
+    console.log("Show books!");
   }
 }
 
-module.exports = new Books();
+export default Books;

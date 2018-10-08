@@ -1,20 +1,14 @@
-const fetch = (time, data) => {
-  return new Promise(resolve => {
-    resolve(data);
-  });
-};
-
-const run = async () => {
-  console.time('run');
-  const user = await fetch(1000, { user: 'Junior Silva', id: 1 });
-  const rt = await Promise.all([
-    fetch(1000, { user_id: user.id, orders: [ { order: 1 }, { order: 2 } ] }),
-    fetch(1000, { user_id: user.id, orders: [ { review: 1 }, { review: 2 } ] })
-  ]);
-  console.log(rt);
-  console.timeEnd('run');
-};
-run();
+//const run = async () => {
+//   console.time('run');
+//   const user = await fetch(1000, { user: 'Junior Silva', id: 1 });
+//   const rt = await Promise.all([
+//     fetch(1000, { user_id: user.id, orders: [ { order: 1 }, { order: 2 } ] }),
+//     fetch(1000, { user_id: user.id, orders: [ { review: 1 }, { review: 2 } ] })
+//   ]);
+//   console.log(rt);
+//   console.timeEnd('run');
+// };
+// run();
 
 const createUUID = () => {
   let date = new Date().getTime();

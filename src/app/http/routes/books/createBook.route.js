@@ -1,3 +1,5 @@
+import app from './../../../../server/app';
+
 export default {
   method: 'post',
   path: '/books',
@@ -5,7 +7,16 @@ export default {
   useWrap: true,
   version: 'v1.0.0',
   handler: (req, res, next) => {
-    res.send('create a book!');
+
+    const {title, pages, isbn, editora} = req.body; 
+
+    res.send({
+      title: title,
+      pages: pages, 
+      codigo_isbn: isbn,
+      editora: editora
+    });
+
     next();
   },
 };
