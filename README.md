@@ -1,9 +1,9 @@
-# Designing my Server Architecture for Scalable Web Applications 
+# Desenhando minha arquitetura de servidor para aplicações web escaláveis 
 
-### Used Technologies
+### Tecnologias
 - Server: Node js + Express (Javascript);
-- Front End: Next js + React (HTML, CSS, JS);
+- Front-end: Next js + React (HTML, CSS, JS);
 - Reverse Proxy & Load Balancer: Nginx;
-- Website Host: Digital Ocean Cloud computing platform;
-- Data: JSON, AJAX (asynchronous calls from client to server);
+- Website Host: Google Cloud Computing Platform;
+- Data: JSON, AJAX (chamadas assíncronas cliente-servidor);
 
